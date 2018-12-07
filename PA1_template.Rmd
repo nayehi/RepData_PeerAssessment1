@@ -170,7 +170,7 @@ NA values will now be replaced with the mean values for their corresponding inte
 activitynew$steps[is.na(activitynew$steps)] <- activitynew$intmeansteps[is.na(activitynew$steps)]
 ```
 
-###4. Make a histogram of the total number of steps taken each day and Calculate and report the **mean** and **median** total number of steps taken per day. 
+### 4. Make a histogram of the total number of steps taken each day and Calculate and report the **mean** and **median** total number of steps taken per day. 
 
 Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
@@ -193,7 +193,7 @@ hist(stepsdatetotalnew$steps, col="cyan", ylim=c(0, 40),las=1,main = "Total Step
 ```
 
 
-Calculate Mean and Median
+**Calculate Mean and Median**
 
 
 ```{r meanmaxnew}
@@ -231,7 +231,7 @@ weekendsf <- c('Saturday','Sunday')
 activitynew$daytype <- factor((weekdays(activitynew$date) %in% weekendsf), levels=c(TRUE, FALSE),labels=c('weekend', 'weekday'))
 ```
 
-###2. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
+### 2. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
 Get the weekend and weekday data. Calculate means.
 ```{r}
@@ -265,7 +265,7 @@ For almost all intervals, average steps during weekends were higher than the ave
 
 Weekdays did, however, show the highest peak of either dataset, at 230 steps, and it occurred during a period of heightened activity in the 8:30 to 9:30 a.m. timeframe. 
 
-##Conclusion
+## Conclusion
 
 This project involved performing computations and analyses, including the plotting of graphs, on data from a personal activity monitoring device.
 
