@@ -20,28 +20,26 @@ Download Date: 12/4/2018
 
 This project requires performing specific computations and analyses, including the plotting of graphs.
 
-Within this document, <span style="color:green">green text</span> indicates text extracted from the project instructions. <span style="color:purple">Purple text</span> indicates calculated values displayed within the main text.
-
-##Introduction 
+## Introduction 
 
 The below Introduction was extracted from the [Project Page](https://www.coursera.org/learn/reproducible-research/peer/gYyPt/course-project-1).
 
-<span style="color:green">It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up. These type of devices are part of the “quantified self” movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.
+*It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up. These type of devices are part of the “quantified self” movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.*
 
-<span style="color:green">This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
+*This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.*
 
-<span style="color:green">The variables included in this dataset are:
+*The variables included in this dataset are:*
 
-<span style="color:green">-steps: Number of steps taking in a 5-minute interval (missing values are coded as \color{red}{\verb|NA|}NA)
+*-steps: Number of steps taking in a 5-minute interval (missing values are coded as \color{red}{\verb|NA|}NA)*
 
-<span style="color:green">-date: The date on which the measurement was taken in YYYY-MM-DD format
+*-date: The date on which the measurement was taken in YYYY-MM-DD format*
 
-<span style="color:green">-interval: Identifier for the 5-minute interval in which measurement was taken
+*-interval: Identifier for the 5-minute interval in which measurement was taken*
 
-<span style="color:green">The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.</span>
+*The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.*
 
 
-##Ensuring Transparency
+## Ensuring Transparency
 
 To ensure others are able to read the code, 'echo' will
 now be set to 'True' in the file's Global Options.
@@ -50,9 +48,9 @@ now be set to 'True' in the file's Global Options.
 ```r
 knitr::opts_chunk$set(echo = TRUE)
 ```
-##Loading and preprocessing the data
+## Loading and preprocessing the data
 
-###1. Loading the data
+### 1. Loading the data
 
 The file is in the working directory because it was included with the [Repo File](https://github.com/rdpeng/RepData_PeerAssessment1) that was forked and cloned for this assignment.
 
@@ -73,7 +71,7 @@ activity <- read_csv("activity.zip")
 ## )
 ```
 
-###2. Preprocessing/transforming the data
+### 2. Preprocessing/transforming the data
 
 This data was analysis-ready, requiring no preprocessing.
 
@@ -86,11 +84,11 @@ options(scipen=1, digits=2)
 ```
 
 
-##What is mean total number of steps taken per day?
+## What is mean total number of steps taken per day?
 
 For this part of the assignment, missing values in the dataset will be ignored, per the project instructions.
 
-###1. Calculate the total number of steps taken per day.
+### 1. Calculate the total number of steps taken per day.
 
 
 
@@ -163,7 +161,7 @@ print(stepsdatetotal)
 ```
 
 
-###2. Make a histogram of the total number of steps taken each day
+### 2. Make a histogram of the total number of steps taken each day
 
 
 ```r
@@ -172,7 +170,7 @@ hist(stepsdatetotal$steps, col="cyan", main = "Total Steps per Day", xlab = "Tot
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
-###3. Calculate and report the **mean** and **median** total number of steps taken per day
+### 3. Calculate and report the **mean** and **median** total number of steps taken per day
 
 
 ```r
@@ -187,14 +185,14 @@ sprintf("%.2f", stepsreport)
 ## [1] "10766.19" "10765.00"
 ```
 
-The **mean** number of steps taken per day is: <span style="color:purple">**10766.19**</span>.
+The **mean** number of steps taken per day is: **10766.19**.
 
-The **median** number of steps taken per day is: <span style="color:purple">**10765**</span>.
+The **median** number of steps taken per day is: **10765**.
 
 
-##What is the average daily activity pattern?
+## What is the average daily activity pattern?
 
-###1. Make a time series plot (i.e. type = "i") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis).
+### 1. Make a time series plot (i.e. type = "i") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis).
 
 
 ```r
@@ -206,7 +204,7 @@ plot(stepsintavg$interval,stepsintavg$steps,type="l",xlab="Interval",ylab="Avera
 ![](PA1_template_files/figure-html/stepsintavgcalc-1.png)<!-- -->
 
 
-###2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 
 ```r
@@ -219,14 +217,14 @@ sprintf("%.2f", maxreport)
 ## [1] "835.00" "206.17"
 ```
 
-The interval <span style="color:purple">**835**</span> contains the maximum number of average steps, with <span style="color:purple">**206.17**</span>.
+The interval **835** contains the maximum number of average steps, with **206.17**.
 
 
-##Imputing missing values
+## Imputing missing values
 
-<span style="color:green">Note that there are a number of days/intervals where there are missing values (coded as `NA`). The presence of missing days may introduce bias into some calculations or summaries of the data.</span>
+Note that there are a number of days/intervals where there are missing values (coded as `NA`). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
-###1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with `NA`s)
+### 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with `NA`s)
 
 
 ```r
@@ -237,13 +235,13 @@ print(NAreport)
 ```
 ## [1] 2304
 ```
-There are <span style="color:purple">**2304**</span> missing values in the 'steps' column.
+There are **2304** missing values in the 'steps' column.
 
-###2. Devise a strategy for filling in all of the missing values in the dataset.
+### 2. Devise a strategy for filling in all of the missing values in the dataset.
 
 The strategy is to replace NA values with the mean values for the corresponding 5-minute intervals. This will be based on 'stepsintavg', which was previously created.
 
-###3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
+### 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
 This will be accomplished via a merge.
 
@@ -309,9 +307,9 @@ sprintf("%.2f", stepsreportnew)
 ```
 
 
-The original **mean** number of steps taken per day was <span style="color:purple">**10766.19**</span> and the new mean is <span style="color:purple">**10766.19**</span>, a difference of <span style="color:purple">**0**</span>.
+The original **mean** number of steps taken per day was **10766.19** and the new mean is **10766.19**, a difference of **0**.
 
-The original **median** number of steps taken per day was <span style="color:purple">**10765** </span> and the new median is <span style="color:purple">**10766.19**</span>, a difference of <span style="color:purple">**1.19**</span>.
+The original **median** number of steps taken per day was **10765** and the new median is **10766.19**, a difference of **1.19**.
 
 **Findings:** 
 
@@ -321,9 +319,9 @@ There was a slight increase in the median, as it was 10765 for the original data
 
 There was, however, a marked **increase in the frequency of intervals with total steps in the 10,000 to 15,000 range**. In the original data, the frequency was around 27; it rose to approximately 36.
 
-##Are there differences in activity patterns between weekdays and weekends?
+## Are there differences in activity patterns between weekdays and weekends?
 
-###1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
+### 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 The first step is to create a variable containing 'Saturday' and 'Sunday' (identifying weekend days).
 

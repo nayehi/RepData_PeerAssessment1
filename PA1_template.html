@@ -131,18 +131,17 @@ $(document).ready(function () {
 <p>This project for the Reproducible Research Class focuses on data from a personal activity monitoring device. The dataset is included within the associated GitHub Repository, but also is <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip">available for download</a> on the course web site.</p>
 <p>Download Date: 12/4/2018</p>
 <p>This project requires performing specific computations and analyses, including the plotting of graphs.</p>
-<p>Within this document, <span style="color:green">green text</span> indicates text extracted from the project instructions. <span style="color:purple">Purple text</span> indicates calculated values displayed within the main text.</p>
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>The below Introduction was extracted from the <a href="https://www.coursera.org/learn/reproducible-research/peer/gYyPt/course-project-1">Project Page</a>.</p>
-<p><span style="color:green">It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up. These type of devices are part of the âquantified selfâ movement â a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.</p>
-<p><span style="color:green">This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.</p>
-<p><span style="color:green">The variables included in this dataset are:</p>
-<p><span style="color:green">-steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)</p>
-<p><span style="color:green">-date: The date on which the measurement was taken in YYYY-MM-DD format</p>
-<p><span style="color:green">-interval: Identifier for the 5-minute interval in which measurement was taken</p>
-<p><span style="color:green">The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.</span></p>
+<p><em>It is now possible to collect a large amount of data about personal movement using activity monitoring devices such as a Fitbit, Nike Fuelband, or Jawbone Up. These type of devices are part of the âquantified selfâ movement â a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. But these data remain under-utilized both because the raw data are hard to obtain and there is a lack of statistical methods and software for processing and interpreting the data.</em></p>
+<p><em>This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.</em></p>
+<p><em>The variables included in this dataset are:</em></p>
+<p><em>-steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)</em></p>
+<p><em>-date: The date on which the measurement was taken in YYYY-MM-DD format</em></p>
+<p><em>-interval: Identifier for the 5-minute interval in which measurement was taken</em></p>
+<p><em>The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.</em></p>
 </div>
 <div id="ensuring-transparency" class="section level2">
 <h2>Ensuring Transparency</h2>
@@ -248,8 +247,8 @@ colnames(stepsreport)[2] &lt;- &quot;stepsreportmedian&quot;
 
 sprintf(&quot;%.2f&quot;, stepsreport)</code></pre>
 <pre><code>## [1] &quot;10766.19&quot; &quot;10765.00&quot;</code></pre>
-<p>The <strong>mean</strong> number of steps taken per day is: <span style="color:purple"><strong>10766.19</strong></span>.</p>
-<p>The <strong>median</strong> number of steps taken per day is: <span style="color:purple"><strong>10765</strong></span>.</p>
+<p>The <strong>mean</strong> number of steps taken per day is: <strong>10766.19</strong>.</p>
+<p>The <strong>median</strong> number of steps taken per day is: <strong>10765</strong>.</p>
 </div>
 </div>
 <div id="what-is-the-average-daily-activity-pattern" class="section level2">
@@ -267,18 +266,18 @@ plot(stepsintavg$interval,stepsintavg$steps,type=&quot;l&quot;,xlab=&quot;Interv
 maxreport &lt;- data.frame(subset(stepsintavg, stepsintavg$steps == maxsteps))
 sprintf(&quot;%.2f&quot;, maxreport) </code></pre>
 <pre><code>## [1] &quot;835.00&quot; &quot;206.17&quot;</code></pre>
-<p>The interval <span style="color:purple"><strong>835</strong></span> contains the maximum number of average steps, with <span style="color:purple"><strong>206.17</strong></span>.</p>
+<p>The interval <strong>835</strong> contains the maximum number of average steps, with <strong>206.17</strong>.</p>
 </div>
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
-<p><span style="color:green">Note that there are a number of days/intervals where there are missing values (coded as <code>NA</code>). The presence of missing days may introduce bias into some calculations or summaries of the data.</span></p>
+<p>Note that there are a number of days/intervals where there are missing values (coded as <code>NA</code>). The presence of missing days may introduce bias into some calculations or summaries of the data.</p>
 <div id="calculate-and-report-the-total-number-of-missing-values-in-the-dataset-i.e.the-total-number-of-rows-with-nas" class="section level3">
 <h3>1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with <code>NA</code>s)</h3>
 <pre class="r"><code>NAreport &lt;- sum(is.na(activity$steps))
 print(NAreport)</code></pre>
 <pre><code>## [1] 2304</code></pre>
-<p>There are <span style="color:purple"><strong>2304</strong></span> missing values in the ‘steps’ column.</p>
+<p>There are <strong>2304</strong> missing values in the ‘steps’ column.</p>
 </div>
 <div id="devise-a-strategy-for-filling-in-all-of-the-missing-values-in-the-dataset." class="section level3">
 <h3>2. Devise a strategy for filling in all of the missing values in the dataset.</h3>
@@ -314,8 +313,8 @@ colnames(stepsreportnew)[1] &lt;- &quot;stepsreportmean&quot;
 colnames(stepsreportnew)[2] &lt;- &quot;stepsreportmedian&quot;
 sprintf(&quot;%.2f&quot;, stepsreportnew)</code></pre>
 <pre><code>## [1] &quot;10766.19&quot; &quot;10766.19&quot;</code></pre>
-<p>The original <strong>mean</strong> number of steps taken per day was <span style="color:purple"><strong>10766.19</strong></span> and the new mean is <span style="color:purple"><strong>10766.19</strong></span>, a difference of <span style="color:purple"><strong>0</strong></span>.</p>
-<p>The original <strong>median</strong> number of steps taken per day was <span style="color:purple"><strong>10765</strong> </span> and the new median is <span style="color:purple"><strong>10766.19</strong></span>, a difference of <span style="color:purple"><strong>1.19</strong></span>.</p>
+<p>The original <strong>mean</strong> number of steps taken per day was <strong>10766.19</strong> and the new mean is <strong>10766.19</strong>, a difference of <strong>0</strong>.</p>
+<p>The original <strong>median</strong> number of steps taken per day was <strong>10765</strong> and the new median is <strong>10766.19</strong>, a difference of <strong>1.19</strong>.</p>
 <p><strong>Findings:</strong></p>
 <p>There was no difference in the means for the original and imputed data, as the mean for both was 10766.19.</p>
 <p>There was a slight increase in the median, as it was 10765 for the original data and 10766.19 for the imputed data.</p>
