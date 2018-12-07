@@ -14,7 +14,7 @@ This project for the Reproducible Research Class focuses
 on data from a personal activity monitoring device. The dataset is included within the associated GitHub Repository, but also
 is [available for download](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip) on the course web site.
 
-Download Date: 12/4/2018
+Data Download Date: 12/4/2018
 
 This project requires performing specific computations and analyses, including the plotting of graphs.
 
