@@ -190,8 +190,8 @@ stepsdatetotalnew <- aggregate(steps ~ date, activitynew, sum)
 
 par(mfrow=c(1,2))
 
-hist(stepsdatetotal$steps, col="cyan", ylim=c(0, 40),las=1,main = "Total Steps per Day", xlab = "Total Steps", breaks = 7)
-hist(stepsdatetotalnew$steps, col="cyan", ylim=c(0, 40),main = "Total Steps per Day - New (Imputed Data)", xlab = "Total Steps", breaks = 7)
+hist(stepsdatetotal$steps, col="cyan", ylim=c(0, 40),las=1,main = "Total Steps per Day - Original", xlab = "Total Steps", breaks = 7)
+hist(stepsdatetotalnew$steps, col="cyan", ylim=c(0, 40),las=1,main = "Total Steps per Day - New (Imputed Data)", xlab = "Total Steps", breaks = 7)
 ```
 
 
