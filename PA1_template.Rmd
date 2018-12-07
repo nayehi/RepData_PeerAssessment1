@@ -268,6 +268,6 @@ Weekdays did, however, show the highest peak of either dataset, at 230 steps, an
 
 This project involved performing computations and analyses, including the plotting of graphs, on data from a personal activity monitoring device.
 
-This file was created in RStudio using R Markdown and then processed via 'Knit to HTML'.
+This file was created in RStudio using R Markdown and then processed via 'Knit to HTML', which produced .html and .md files.
 
 The final project submission is to a GitHub repository.
