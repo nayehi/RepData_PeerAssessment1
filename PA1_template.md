@@ -1,8 +1,8 @@
 ---
+title: "Reproducible Research: Peer Assessment 1"
 output: 
   html_document: 
     keep_md: yes
-title: "Reproducible Research: Peer Assessment 1"
 author: "nayehi"
 date: "6 December, 2018"
 ---
