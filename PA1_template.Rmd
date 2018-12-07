@@ -6,8 +6,9 @@ output:
 author: "nayehi"
 date: "6 December, 2018"
 ---
+# Reproducible Research: Peer Assessment 1
 
-## Description:
+## Description
 
 This project for the Reproducible Research Class focuses 
 on data from a personal activity monitoring device. The dataset is included within the associated GitHub Repository, but also
